@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SendIT</title>
+    <link rel="stylesheet" href="../css/app.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    <header class="page-header"> 
+        <nav>
+            <div class="main-menu" >
+               <a href="index.html"> <div class="logo">SendIT</div> </a>
+                <label for="menu-toggle">
+                    <i class="material-icons">menu</i>
+                </label>
+                <input type="checkbox" id="menu-toggle">
+                <div class="s-menu">
+                    
+                    <ul>
+                        <li class="list-items"><a href="parcel.html">Parcel</a></li>
+
+
+
+                        <li class="dropdown list-items">
+                            <a class = "dropbtn" href="">Reports</a>
+                            <div class="dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </li>
+
+                        <li class="logout-link"><a href="logout.html">Logout</a></li>
+                        
+
+                    </ul>
+
+                    
+                </div>
+        </nav>
+    </header>        
+    </nav>
+
+    
+
+    <section class="page-contents-body page-background-two">
+        <div class="v-space"></div>
+        <div class="v-space"></div>
+
+        <div class="v-space"></div>
+        <div class="v-space"></div>
+        <form action="" class="form-container">
+            <h1>Create a parcel delivery order</h1>
+            <div class="v-space"></div>
+            <label for="">From : </label>
+            <select name="from">
+                <option value="rwanda">Rwanda</option>
+                <option value="uganda">Uganda</option>
+                <option value="kenya">Kenya</option>
+                <option value="nigeria">Nigeria</option>
+            </select>
+        
+            <label for="">To : </label>
+            <select name="to">
+                <option value="rwanda">Rwanda</option>
+                <option value="uganda">Uganda</option>
+                <option value="kenya">Kenya</option>
+                <option value="nigeria">Nigeria</option>
+            </select>
+            <div class="v-space"></div>
+            <label for="">Parcel Description</label> <input type="text">
+            <label for="">Weight</label> <input type="number">
+            <label for="">Volume</label> <input type="number">
+            <label for="">Sending date</label> <input type="date">
+
+            <div class="v-space"></div>
+            <button name="quote" class="quote_btn">Quotes</button>
+           
+        </form>
+    </section>
+</body>
+</html>
