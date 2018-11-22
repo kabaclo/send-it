@@ -24,12 +24,6 @@ app.get(`${baseAPIURI}/users/:userId/parcels`, getByParcelsUser);
 app.put(`${baseAPIURI}/parcels/:parcelId/cancel`, cancelParcelDelivery);
 app.post(`${baseAPIURI}/parcels/$`, createParcel);
 
-// app.use('/api/v1/parcels', require('./routes/searchParcel'));
-// app.use('/api/v1/users/', require('./routes/searchParcelByUser'));
-// app.use('/api/v1/parcels/', require('./routes/cancelDelivery'));
-// app.use('/api/v1', require('./routes/createParcelDelivery'));
-// app.use('/api/v1/user/login', require('./user'));
-
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
