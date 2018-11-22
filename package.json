@@ -11,7 +11,7 @@
     "watch": "npm-watch",
     "build-server": "babel Server --out-dir build",
     "build": "npm run build-server",
-    "start": "nodemon build/routes/index.js "
+    "start": "node build/routes/index.js "
   },
   "author": "Clovis",
   "license": "ISC",
@@ -34,5 +34,8 @@
     "@babel/polyfill": "^7.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
