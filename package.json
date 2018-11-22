@@ -1,0 +1,38 @@
+{
+  "name": "config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "watch": {
+    "build-server": "Server"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm-watch",
+    "build-server": "babel Server --out-dir build",
+    "build": "npm run build-server",
+    "start": "nodemon build/routes/index.js "
+  },
+  "author": "Clovis",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-transform-arrow-functions": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "npm-watch": "^0.4.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
