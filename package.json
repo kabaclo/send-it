@@ -7,11 +7,13 @@
     "build-server": "Server"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run build-server && npm run build && nyc mocha build/tests/ --exit",
     "watch": "npm-watch",
     "build-server": "babel Server --out-dir build",
     "build": "npm run build-server",
-    "start": "node build/routes/index.js "
+    "start": "node build/routes/index.js ",
+    "nyc": "nyc npm test",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Clovis",
   "license": "ISC",
@@ -24,15 +26,20 @@
     "babel-core": "^6.26.3",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
-    "npm-watch": "^0.4.0"
+    "npm-watch": "^0.4.0",
+    "nyc": "^13.1.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "coveralls": "^3.0.2",
     "express": "^4.16.4"
   },
   "engines": {

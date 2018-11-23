@@ -27,3 +27,5 @@ app.post(`${baseAPIURI}/parcels/$`, createParcel);
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
+
+export default app;

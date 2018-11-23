@@ -1,5 +1,10 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 var _express = _interopRequireDefault(require("express"));
 
 var _bodyParser = _interopRequireDefault(require("body-parser"));
@@ -26,3 +31,5 @@ app.post(`${baseAPIURI}/parcels/$`, _parcels.createParcel);
 app.listen(PORT, function () {
   console.log(`App listening on port ${PORT}`);
 });
+var _default = app;
+exports.default = _default;
