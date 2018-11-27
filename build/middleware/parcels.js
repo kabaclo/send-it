@@ -9,6 +9,8 @@ var _PARCELS = _interopRequireDefault(require("../helpers/PARCELS"));
 
 var _parcelsHelper = _interopRequireDefault(require("../helpers/parcels-helper"));
 
+var _database = _interopRequireDefault(require("../db/database"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const response = {
@@ -16,7 +18,7 @@ const response = {
   data: {
     success: false
   }
-};
+}; // parcels.parcels[0].parcelName
 
 const getParcels = function getParcels(req, res) {
   res.status(200).send(_PARCELS.default);
@@ -95,3 +97,4 @@ const createParcel = function createParcel(req, res) {
 };
 
 exports.createParcel = createParcel;
+console.log(getParcels);

@@ -62,9 +62,7 @@ class User {
     var _this = this;
 
     return this.userList.find(function (usr) {
-      if (usr.username === _this.username) {
-        return usr;
-      }
+      if (usr.username === _this.username) return usr;
     });
   }
 

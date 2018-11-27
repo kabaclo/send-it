@@ -40,11 +40,8 @@ export default class User {
   }
 
   findByUsername() {
-    
     return this.userList.find((usr) => {
-      if (usr.username === this.username) {
-        return usr;
-      }
+      if (usr.username === this.username) return usr;
     });
   }
 }

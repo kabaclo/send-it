@@ -1,15 +1,15 @@
 import parcels from '../helpers/PARCELS';
 import ParcelsHelper from '../helpers/parcels-helper';
 
+
 const response = {
   code: 200,
   data: {
     success: false,
   },
 };
-const getParcels = (req, res) => {
-  res.status(200).send(parcels);
-};
+// parcels.parcels[0].parcelName
+const getParcels = (req, res) => { res.status(200).send(parcels); };
 
 const getParcelById = (req, res) => {
   const { parcelId = null } = req.params;
@@ -64,7 +64,7 @@ const createParcel = (req, res) => {
   });
   res.status(response.code).send(response);
 };
-
+console.log(getParcels);
 export {
   getParcels, getParcelById, getByParcelsUser, cancelParcelDelivery, createParcel,
 };
