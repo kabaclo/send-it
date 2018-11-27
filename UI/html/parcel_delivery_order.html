@@ -21,16 +21,16 @@
                 <div class="s-menu">
                     
                     <ul>
-                        <li class="list-items"><a href="parcel.html">Parcel</a></li>
+                        <li class="list-items"><a href="parcel_delivery_order.html">Parcel</a></li>
 
 
 
                         <li class="dropdown list-items">
                             <a class = "dropbtn" href="">Reports</a>
                             <div class="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
+                                <a href="#">All parcels</a>
+                                <a href="#">Parcels delivered</a>
+                                <a href="#">Parcels in transit</a>
                             </div>
                         </li>
 
@@ -72,15 +72,38 @@
                 <option value="nigeria">Nigeria</option>
             </select>
             <div class="v-space"></div>
-            <label for="">Parcel Description</label> <input type="text">
-            <label for="">Weight</label> <input type="number">
-            <label for="">Volume</label> <input type="number">
-            <label for="">Sending date</label> <input type="date">
+            <div class="form-element">
+                    <input type="text" name = "receiver_name" id = "receiver_name">
+                    <label for="receiver_name">Receiver name</label>
+                </div>
 
+            <div class="form-element">
+                <input type="text" name = "parcel-description" id = "parcel-description">
+                <label for="parcel-description">Parcel Description</label>
+            </div>
+
+            <div class="form-element">
+                <input type="number" id="weight" name="weight">
+                <label for="">Weight</label> 
+            </div>
+            <div class="form-element">
+                <input type="number" name="volume" id="volume">
+                <label for="">Volume</label>
+            </div>
+            <div class="form-element">
+                <input type="date" id="sending-date" name="sending-date">
+                <label for="sending-date"></label> 
+            </div>
             <div class="v-space"></div>
-            <button name="quote" class="quote_btn">Quotes</button>
+            <button name="quote" class="quote_btn">Submit</button>
            
         </form>
     </section>
+    <script>
+    document.querySelector ('.quote_btn').addEventListener ('click', (event) =>{
+    event.preventDefault();
+    window.location.href = 'quotes.html';
+    });
+    </script>
 </body>
 </html>
