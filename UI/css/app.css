@@ -309,3 +309,33 @@ label.input-empty{
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.6);
     cursor: pointer;
 }
+
+/*-- style my table */
+
+#parcels {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+#parcels td, #parcels th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    
+}
+
+#parcels tr:nth-child(even){background-color: #f2f2f2;}
+
+#parcels tr:hover {background-color: #ddd;}
+
+#parcels th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:rgb(7, 80, 109);
+    color: white;
+    
+}
+
+/*-- end styling my table */ 
