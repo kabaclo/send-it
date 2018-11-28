@@ -21,15 +21,15 @@ class Users extends DBHelper {
     return true;
   }
 
-//   async get(options = {}) {
+  // async get(options = {}) {
 
-//   }
+  //   }
 
-//   async delete(userId = null) {
+  //   async delete(userId = null) {
 
-//   }
+  //   }
 
-//   async update(options = {}) {
+  //   async update(options = {}) {
 
 
 //   }

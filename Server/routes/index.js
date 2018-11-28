@@ -7,7 +7,7 @@ import 'dotenv/config';
 import {
   getParcels, getParcelById, getByParcelsUser, cancelParcelDelivery, createParcel,
 } from '../middleware/parcels';
-import User from '../controllers/user';
+// import User from '../controllers/user';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
