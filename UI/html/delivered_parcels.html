@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SendIT</title>
+    <link rel="stylesheet" href="../css/app.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    <header class="page-header"> 
+        <nav>
+            <div class="main-menu" >
+               <a href="index.html"> <div class="logo">SendIT</div> </a>
+                <label for="menu-toggle">
+                    <i class="material-icons">menu</i>
+                </label>
+                <input type="checkbox" id="menu-toggle">
+                <div class="s-menu">
+                    
+                    <ul>
+                        <li class="list-items"><a href="parcel_delivery_order.html">Parcel</a></li>
+
+
+                        <li class="dropdown list-items">
+                                <a class = "dropbtn" href="">Reports</a>
+                                <div class="dropdown-content">
+                                    <a href="./all_parcels.html">All parcels</a>
+                                    <a href="./delivered_parcels.html">Parcels delivered</a>
+                                    <a href="./intransit_parcels.html">Parcels in transit</a>
+                                </div>
+                        </li>
+
+                        <li class="logout-link"><a href="logout.html">Logout</a></li>
+                        
+
+                    </ul>
+
+                    
+                </div>
+        </nav>
+    </header>        
+    </nav>
+
+    
+
+    <section class="page-contents-body page-background-two">
+        <div class="v-space"></div>
+        <div class="v-space"></div>
+        <div class="v-space"></div>
+        <div class="v-space"></div>
+        <form action="" class="form-container">
+                <table id="parcels">
+                        <tr>
+                          <th>Parcel Id</th>
+                          <th>Receiver</th>
+                          <th>Parcel details</th>
+                          <th>Weight</th>
+                          <th>From </th>
+                          <th>Destination </th>
+                          <th>Delivery date</th>
+                          <th>Arrival date </th>
+                          <th>Price</th>
+                          <th>Action</th>
+                        </tr>
+                        <tr>
+                          <td>001</td>
+                          <td>Justin Bahati</td>
+                          <td>SebaMed</td>
+                          <td>0.5 kg </td>
+                          <td>Rwanda</td>
+                          <td>Kenya</td>
+                          <td>1/11/2018</td>
+                          <td>3/11/2018</td>
+                          <td>5$</td>
+                          <td> 
+                                <select name="action">
+                                        <option>View</option>
+                                        <option>Locate</option>
+                                </select> 
+                          </td>
+                          
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Simeon Ha</td>
+                            <td>SebaMed</td>
+                            <td>0.5 kg </td>
+                            <td>Rwanda</td>
+                            <td>Kenya</td>
+                            <td>1/11/2018</td>
+                            <td>3/11/2018</td>
+                            <td>5$</td>
+                            <td> 
+                            <select name="action">
+                                <option>View</option>
+                                <option>Locate</option>
+                            </select> 
+                            </td>
+                                
+                        </tr>
+                                                                        
+                      </table>           
+        </form>
+    </section>
+</body>
+</html>           
+        </form>
+    </section>
+</body>
+</html>
