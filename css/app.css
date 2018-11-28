@@ -1,0 +1,341 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}
+nav {
+    width: 100%;
+    background:rgb(45, 148, 189);
+    opacity: .8;
+    color: white;
+}
+ul{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0; 
+}
+ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+    font-size: 18px;
+
+}
+ul li:hover {
+    background :#001f44;
+}
+ul li a {
+    color :#fff;
+    text-decoration: none;
+}
+.h-space-ss, .h-space-ms, .h-space-ls{
+    display: inline-block;
+    height: 1px;
+}
+.h-space-ss{
+    width: 8px;
+}
+.h-space-ms{
+    width: 16px;
+}
+.h-space-ls{
+    width: 24px;
+}
+.v-space{
+    display: block;
+    width: 1px;
+    height: 16px;
+}
+.page-header{
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #2d94bd;
+    color: #FFFFFF;
+    font-size: 24px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.logo{
+    position: fixed;
+    left: 16px;
+    top: 16px;
+}
+
+.sign-in-btn, .sign-up-btn{
+    background: transparent;
+    border: none;
+    padding: 0 8px;
+    color: inherit;
+    cursor: pointer;
+    font-size: 16px;
+}
+.sign-up-btn:hover{
+    border-bottom: 1px solid #FFFFFF;
+}
+.sign-in-btn{
+    background: #f39e40;
+    border-radius: 5px;
+    height: 24px;
+    line-height: 24px;
+    margin: 0 16px 0 0;
+}
+.sign-in-btn:hover{
+    background: #ee7d00;
+}
+.form-container .quote_btn {
+    margin-left: 50%;
+
+}
+
+.form-container .quote_btn:hover {
+    background-color: aqua;
+}
+
+
+.page-contents-body{
+    width: 100%;
+    height: calc(100vh - 56px);
+    margin-top: 56px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+.page-contents-body.section-background{
+    /* The background image was got from this website:  https://www.webliststore.in/uploads/post-ad/srivenkateshwaraagencies0070417010449cor13.jpg */
+    background: url(../images/bg1.jpg) center center no-repeat;
+}
+.page-contents-body.page-background-two{
+     /* The background image was got from this website:  https://www.webliststore.in/uploads/post-ad/srivenkateshwaraagencies0070417010449cor13.jpg */
+     background: url(../images/BG_Big.png) center center no-repeat;
+     background-size: cover;
+}
+.form-container{
+    padding: 16px;
+    border: 1px solid skyblue;
+    border-radius: 8px;
+    box-shadow: 3px 4px 13px #00000085;
+    margin: 0 24px 0 8px;
+}
+
+.home-title{
+    font-size: 32px;
+    color: #1b5d8d;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+/* Dopdown */
+.logout-link{
+    position: absolute;
+    right: 16px;
+}
+.dropdown{
+    position: relative;
+}
+.dropbtn{
+    padding: 20px;
+}
+.dropbtn:hover ~ .dropdown-content, .dropdown-content:hover{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdown-content{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: #001f44;
+    min-width: calc(100%);
+}
+.dropdown-content a{
+    display: block;
+    padding: 8px 16px;
+}
+.dropdown-content a:hover{
+    background: #006ae9;
+    color: #ddd;
+}
+
+.s-menu{
+    margin-left: 86px;
+}
+
+label[for=menu-toggle]{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    pointer-events: none;
+    opacity: 0;
+    cursor: pointer;
+}
+#menu-toggle{
+    display: none;
+}
+
+@media screen and (max-width: 540px) {
+    label[for=menu-toggle]{
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .s-menu{
+        position: absolute;
+        width: 262px;
+        height: 100vh;
+        top: 56px;
+        right: 0;
+        background: #2d94bd;
+        margin: 0;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(102%);
+        transition: transform .3s cubic-bezier(0, 0, 0.3, 1),
+                    opacity .3s cubic-bezier(0, 0, 0.3, 1);
+    }
+    #menu-toggle:checked ~ .s-menu{
+        transform:none;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .dropbtn{
+        padding-right: 0px;
+    }
+    .s-menu ul{
+     text-align: right;
+     width: 100%;
+     overflow: hidden;
+     height: 100%;
+    }
+    .list-items{
+        position: relative;
+        width: 100%;
+        right: 0;
+    }
+    .logout-link{
+        bottom: 56px;
+
+    }
+
+    .dropdown-content{
+        text-align: right;
+        max-width: 100%!important;
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* form-element styles */
+.form-element{
+    position: relative;
+    height: 40px;
+    min-width: 296px;
+    overflow: hidden;
+}
+.form-element input, .form-element label{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+}
+.form-element label{
+    transition: transform 0.3s ease-in-out;
+    bottom: 24px;
+    transform: translateY(24px);
+    color: #ccc;
+    cursor: text;
+}
+.form-element input{
+    background: transparent;
+    height: 24px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: transparent;
+}
+.form-element input:focus{
+    border-color: red;
+    color: red;
+}
+.form-element input:focus ~ label{
+    transform: none;
+    color: red;
+}
+label.input-not-empty{
+    transform: none;
+}
+label.input-empty{
+    transform: translateY(24px);
+}
+.s-button{
+    width: max-content;
+    margin: auto
+}
+.s-button button{
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    color: white;
+    background: #2d94bd;
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+/*-- style my table */
+
+#parcels {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+#parcels td, #parcels th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    
+}
+
+#parcels tr:nth-child(even){background-color: #f2f2f2;}
+
+#parcels tr:hover {background-color: #ddd;}
+
+#parcels th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:rgb(7, 80, 109);
+    color: white;
+    
+}
+
+/*-- end styling my table */ 
