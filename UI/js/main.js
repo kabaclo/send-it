@@ -24,8 +24,3 @@ const form_elements_int =()=>{
 })();
 
 
-document.getElementById ('sign-in-btn').addEventListener ('click', (event) =>{
-    event.preventDefault();
-    window.location.href = 'parcel_delivery_order.html';
-});
-
