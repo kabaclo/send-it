@@ -9,8 +9,6 @@ var _PARCELS = _interopRequireDefault(require("../helpers/PARCELS"));
 
 var _parcelsHelper = _interopRequireDefault(require("../helpers/parcels-helper"));
 
-var _database = _interopRequireDefault(require("../db/database"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const response = {

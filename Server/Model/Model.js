@@ -37,8 +37,8 @@ class DBHelper {
   }
 
   async query(options = {}) {
-    const { query = '', params = {}, callback = () => {} } = options;
-    const queryResponse = await this.client.query(query);
+    const { query = '', params = [], callback = () => {} } = options;
+    const queryResponse = await this.client.query(query, params);
     callback(queryResponse);
     return queryResponse;
   }

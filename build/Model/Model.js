@@ -48,10 +48,10 @@ class DBHelper {
     const _options$query = options.query,
           query = _options$query === void 0 ? '' : _options$query,
           _options$params = options.params,
-          params = _options$params === void 0 ? {} : _options$params,
+          params = _options$params === void 0 ? [] : _options$params,
           _options$callback = options.callback,
           callback = _options$callback === void 0 ? function () {} : _options$callback;
-    const queryResponse = await this.client.query(query);
+    const queryResponse = await this.client.query(query, params);
     callback(queryResponse);
     return queryResponse;
   }

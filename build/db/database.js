@@ -7,6 +7,7 @@ exports.default = void 0;
 
 var _pg = require("pg");
 
+// This connection to the database where got from the preboot camp training on database
 const pool = new _pg.Pool();
 
 const connect = async function connect() {

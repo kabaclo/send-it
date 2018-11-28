@@ -16,4 +16,5 @@ const execute = async (sql, data = []) => {
   }
 };
 
+
 export default execute;
