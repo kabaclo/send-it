@@ -9,8 +9,6 @@ const database = process.env[databaseenv];
 // process.env.PGDATABASE_TEST;
 const port = process.env.PGPORT;
 
-
-
 const configObject = {
   user,
   host,
@@ -19,6 +17,6 @@ const configObject = {
   port,
 
 };
-console.log(environment, '============', configObject);
+// console.log(environment, '============', configObject);
 
 export default configObject;
