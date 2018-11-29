@@ -89,7 +89,7 @@ describe(' GET parcels', function () {
       done();
     });
   });
-  it('Should create a parcel', function (done) {
+  it.only('Should create a parcel', function (done) {
     const data = {
       newParcel: {
         parcelId: 4,
@@ -109,7 +109,8 @@ describe(' GET parcels', function () {
     _chai.default.request(_index.default).post('/api/v1/parcels/?username=bajustone&password=123').send(data).end(function (err, res) {
       // chai.expect(res.body.code).to.be.equal(200);
       res.body.should.be.a('object');
-      res.body.should.have.property('data'); // res.body.should.have.property('success').eql(true);
+      res.body.should.have.property('success').eql(true); // res.body.should.have.property('data');
+      // res.body.should.have.property('success').eql(true);
       // res.body.should.have.property('code');
       // res.body.should.have.property('data');
       // res.body.should.have.property('code').eql(200);

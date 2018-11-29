@@ -23,7 +23,7 @@ class Users extends DBHelper {
     }
 
     return true;
-  } //   async get(options = {}) {
+  } // async get(options = {}) {
   //   }
   //   async delete(userId = null) {
   //   }

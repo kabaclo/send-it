@@ -11,11 +11,11 @@ const parcels = {
     parcelName: 'courrier Justin',
     from: 'Kigali',
     destination: 'Nairobi',
-    current_location: 'kigali',
+    currentLocation: 'kigali',
     weight: '12Kg',
     length: '45m',
-    submission_date: '10/11/2018',
-    arrival_date: '11/11/2018',
+    submissionDate: '10/11/2018',
+    arrivalDate: '11/11/2018',
     status: 'inTransit'
   }, {
     parcelId: 2,

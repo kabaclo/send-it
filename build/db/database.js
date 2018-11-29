@@ -10,12 +10,11 @@ var _pg = require("pg");
 // This connection to the database where got from the preboot camp training on database
 const pool = new _pg.Pool();
 
-const connect = async function connect() {
+const connect = async function () {
   return pool.connect();
 };
 
-const execute = async function execute(sql) {
-  let data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+const execute = async function (sql, data = []) {
   const connection = await connect();
 
   try {

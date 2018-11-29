@@ -89,7 +89,7 @@ describe(' GET parcels', () => {
         done();
       });
   });
-  it('Should create a parcel', (done) => {
+  it.only('Should create a parcel', (done) => {
     const data = {
       newParcel: {
         parcelId: 4,
@@ -111,7 +111,8 @@ describe(' GET parcels', () => {
       .end((err, res) => {
         // chai.expect(res.body.code).to.be.equal(200);
         res.body.should.be.a('object');
-        res.body.should.have.property('data');
+        res.body.should.have.property('success').eql(true);
+        // res.body.should.have.property('data');
         // res.body.should.have.property('success').eql(true);
         // res.body.should.have.property('code');
         // res.body.should.have.property('data');

@@ -11,7 +11,7 @@ var _USERS = _interopRequireDefault(require("../helpers/USERS"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const login = function login(req, res, next) {
+const login = function (req, res, next) {
   const response = {
     code: 200,
     data: {}

@@ -9,6 +9,8 @@ var _PARCELS = _interopRequireDefault(require("../helpers/PARCELS"));
 
 var _parcelsHelper = _interopRequireDefault(require("../helpers/parcels-helper"));
 
+var _Parcel = _interopRequireDefault(require("../Model/Parcel"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const response = {
@@ -18,15 +20,16 @@ const response = {
   }
 }; // parcels.parcels[0].parcelName
 
-const getParcels = function getParcels(req, res) {
+const getParcels = function (req, res) {
   res.status(200).send(_PARCELS.default);
 };
 
 exports.getParcels = getParcels;
 
-const getParcelById = function getParcelById(req, res) {
-  const _req$params$parcelId = req.params.parcelId,
-        parcelId = _req$params$parcelId === void 0 ? null : _req$params$parcelId;
+const getParcelById = function (req, res) {
+  const {
+    parcelId = null
+  } = req.params;
 
   const parcel = _parcelsHelper.default.getById({
     parcelsModel: _PARCELS.default,
@@ -45,9 +48,10 @@ const getParcelById = function getParcelById(req, res) {
 
 exports.getParcelById = getParcelById;
 
-const getByParcelsUser = function getByParcelsUser(req, res) {
-  const _req$params$userId = req.params.userId,
-        userId = _req$params$userId === void 0 ? null : _req$params$userId;
+const getByParcelsUser = function (req, res) {
+  const {
+    userId = null
+  } = req.params;
 
   const parcelsResult = _parcelsHelper.default.getByParcelsUser({
     parcelsModel: _PARCELS.default,
@@ -69,9 +73,10 @@ const getByParcelsUser = function getByParcelsUser(req, res) {
 
 exports.getByParcelsUser = getByParcelsUser;
 
-const cancelParcelDelivery = function cancelParcelDelivery(req, res) {
-  const _req$params$parcelId2 = req.params.parcelId,
-        parcelId = _req$params$parcelId2 === void 0 ? null : _req$params$parcelId2;
+const cancelParcelDelivery = function (req, res) {
+  const {
+    parcelId = null
+  } = req.params;
 
   const cancelResult = _parcelsHelper.default.updateParcel({
     parcelsModel: _PARCELS.default,
@@ -84,15 +89,30 @@ const cancelParcelDelivery = function cancelParcelDelivery(req, res) {
 
 exports.cancelParcelDelivery = cancelParcelDelivery;
 
-const createParcel = function createParcel(req, res) {
-  const _req$body$newParcel = req.body.newParcel,
-        newParcel = _req$body$newParcel === void 0 ? null : _req$body$newParcel;
-  response.data = _parcelsHelper.default.createParcel({
-    parcelsModel: _PARCELS.default,
+const createParcel = async function (req, res) {
+  const {
     newParcel
-  });
-  res.status(response.code).send(response);
+  } = req.body;
+  const insertParcelQuery = `INSERT INTO Parcels
+                (userId, receiver, parcelDescription, origin, destination,
+                currentLocation, weightKg, submissionDate, arrivalDate, status) VALUES
+                ($1, $2, $3, $4, $5, $6, $7,$8, $9, $10)`;
+  const insertParcelValues = [newParcel.userId, newParcel.receiver, newParcel.parcelDescription, newParcel.origin, newParcel.destination, newParcel.currentLocation, Number(newParcel.weightKg), newParcel.submissionDate, newParcel.arrivalDate, newParcel.status];
+
+  try {
+    const parcel = new _Parcel.default();
+    await parcel.query(insertParcelQuery, insertParcelValues); // console.warn('Success here');
+
+    return res.status(200).send({
+      success: true
+    });
+  } catch (error) {
+    console.log(error); // console.error('error here');
+
+    return res.status(500).send({
+      success: false
+    });
+  }
 };
 
 exports.createParcel = createParcel;
-console.log(getParcels);

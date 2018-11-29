@@ -1,5 +1,6 @@
 import parcels from '../helpers/PARCELS';
 import ParcelsHelper from '../helpers/parcels-helper';
+import Parcel from '../Model/Parcel';
 
 
 const response = {
@@ -55,16 +56,39 @@ const cancelParcelDelivery = (req, res) => {
   res.status(response.code).send(response);
 };
 
-const createParcel = (req, res) => {
-  const { newParcel = null } = req.body;
+const createParcel = async (req, res) => {
+  const { newParcel } = req.body;
 
-  response.data = ParcelsHelper.createParcel({
-    parcelsModel: parcels,
-    newParcel,
-  });
-  res.status(response.code).send(response);
+  const insertParcelQuery = `INSERT INTO Parcels
+                (userId, receiver, parcelDescription, origin, destination,
+                currentLocation, weightKg, submissionDate, arrivalDate, status) VALUES
+                ($1, $2, $3, $4, $5, $6, $7,$8, $9, $10)`;
+  
+  const insertParcelValues = [
+    newParcel.userId,
+    newParcel.receiver,
+    newParcel.parcelDescription,
+    newParcel.origin,
+    newParcel.destination,
+    newParcel.currentLocation,
+    Number(newParcel.weightKg),
+    newParcel.submissionDate,
+    newParcel.arrivalDate,
+    newParcel.status,
+  ];
+  try {
+    const parcel = new Parcel();
+    await parcel.query(insertParcelQuery, insertParcelValues);
+    // console.warn('Success here');
+    return res.status(200).send({ success: true });
+  } catch (error) {
+    console.log (error);
+    // console.error('error here');
+    return res.status(500).send({ success: false });
+  }
 };
-console.log(getParcels);
+
+
 export {
   getParcels, getParcelById, getByParcelsUser, cancelParcelDelivery, createParcel,
 };

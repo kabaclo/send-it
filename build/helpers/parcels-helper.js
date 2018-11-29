@@ -6,16 +6,18 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 class ParcelsHelper {
-  constructor() {
-    let options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    const parcelsModel = options.parcelsModel;
+  constructor(options = {}) {
+    const {
+      parcelsModel
+    } = options;
     this.parcelsModel = parcelsModel;
   }
 
-  static getById() {
-    let options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    const parcelsModel = options.parcelsModel,
-          parcelId = options.parcelId; // console.log('parcels id,',parcelId);
+  static getById(options = {}) {
+    const {
+      parcelsModel,
+      parcelId
+    } = options; // console.log('parcels id,',parcelId);
 
     if (!parcelId) {
       return {
@@ -30,10 +32,11 @@ class ParcelsHelper {
     });
   }
 
-  static getByParcelsUser() {
-    let options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    const parcelsModel = options.parcelsModel,
-          userId = options.userId;
+  static getByParcelsUser(options = {}) {
+    const {
+      parcelsModel,
+      userId
+    } = options;
 
     if (!userId) {
       return {
@@ -47,8 +50,7 @@ class ParcelsHelper {
     });
   }
 
-  static updateParcel() {
-    let options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  static updateParcel(options = {}) {
     const parcel = ParcelsHelper.getById(options);
     if (!parcel) return false;
 
@@ -67,10 +69,11 @@ class ParcelsHelper {
     };
   }
 
-  static createParcel() {
-    let options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-    const parcelsModel = options.parcelsModel,
-          newParcel = options.newParcel;
+  static createParcel(options = {}) {
+    const {
+      parcelsModel,
+      newParcel
+    } = options;
     /** TODO: check whether newParcel has valid data */
 
     newParcel.parcelId = ParcelsHelper.newParcelId();
