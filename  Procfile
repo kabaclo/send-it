@@ -1,1 +1,1 @@
-web: node build/routes/index.js
+web: npm run start_prod
